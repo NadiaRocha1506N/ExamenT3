@@ -1,0 +1,81 @@
+@layout('layouts.app')
+
+@section('content')
+
+<div class="container">
+    <div  class="col">
+        <form class="row g-3" action="/editar/guardar" method="post">
+            <div class="row">
+            <div class="col">
+                <label for="nombre" class="form-label">Id:</label>
+                <input type="text" class="form-control"  id="nombre" name="id"  value="{{usuario.id}}" readonly><br>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <label for="nombre" class="form-label">Nombre:</label>
+                    <input type="text" class="form-control"  id="nombre" name="nombre" value="{{usuario.nombre}}" ><br>
+                </div>
+                <div class="col-md-3">
+                    <label for="apellidoPa" class="form-label" >Apellido Paterno:</label>
+                    <input type="text" class="form-control" id="apellidoPa" name="apellidoPa" value="{{usuario.apellidoPa}}" ><br>
+                </div>
+                <div class="col-md-3">
+                    <label for="apellidoMa" class="form-label" >Apellido Materno:</label>
+                    <input type="text" class="form-control" id="apellidoMa" name="apellidoMa" value="{{usuario.apellidoMa}}" ><br>
+                </div>
+                <div class="col-md-3">
+                    <label for="edad" class="form-label" >Edad:</label>
+                    <input type="number" class="form-control" id="edad" name="edad" value="{{usuario.edad}}" ><br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <label for="telefono" class="form-label" >Telefono:</label>
+                    <input type="tel" class="form-control" id="telefono" name="telefono" maxlength="10" value="{{usuario.telefono}}"><br>
+                </div>
+                <div class="col-md-2">
+                    <label for="sexo" class="form-label" >Sexo</label>
+                    <select class="form-select" aria-label="Default select example" id="sexo" name="sexo" value="{{usuario.sexo}}">
+                        <option selected>Selecciona</option>
+                        <option value="Mujer">Mujer</option>
+                        <option value="Hombre">Hombre</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label for="correo" class="form-label">Correo:</label>
+                    <input type="text"class="form-control" id="correo" name="correo" value="{{usuario.correo}}" ><br>
+                </div>
+                <div class="col-md-3">
+                    <label for="carrera" class="form-label" >Carrera:</label>
+                    <select class="form-select" aria-label="Default select example" id="carrera" name="carrera" >
+                        <option selected>Selecciona</option>
+                        <option value="Ing.Industrial">Ing.Industrial</option>
+                        <option value="Ing.Electromecánica">Ing.Electromecánica</option>
+                        <option value="Ing.Informatica">Ing.Informatica</option>
+                        <option value="Ing.Sistemas Computacioneles<">Ing.Sistemas Computacioneles</option>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <label for="semestre" class="form-label">Semestre:</label>
+                    <select class="form-select" aria-label="Default select example" id="semestre" name="semestre" >
+                        <option selected>Selecciona</option>
+                        <option value="Primero">Primero</option>
+                        <option value="Segundo">Segundo</option>
+                        <option value="Tercero">Tercero</option>
+                        <option value="Cuarto">Cuarto</option>
+                        <option value="Quinto">Quinto</option>
+                        <option value="Sexto">Sexto</option>
+                        <option value="Septimo">Septimo</option>
+                        <option value="Octavo">Octavo</option>
+                        <option value="Noveno">Noveno</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col">
+                <button type="submit"  class="btn btn-primary text-right">Editar Usuario</button>
+                <a href="/" class="btn btn-primary text-right">Volver atrás</a>
+            </div>
+        </form> 
+    </div>
+</div>
+@endsection

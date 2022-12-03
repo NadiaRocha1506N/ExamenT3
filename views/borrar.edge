@@ -1,0 +1,63 @@
+@layout('layouts.app')
+
+@section('content')
+
+<div class="container">
+    <div  class="col">
+        <form class="row g-3" action="/borrar" method="POST">
+            <div class="row">
+                <div class="col">
+                    <label for="nombre" class="form-label">Id:</label>
+                    <input type="text" class="form-control"  id="nombre" name="id"  value="{{usuario.id}}" readonly><br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <label for="nombre" class="form-label">Nombre:</label>
+                    <input type="text" class="form-control"  id="nombre" value="{{usuario.nombre}}" readonly><br>
+                </div>
+                <div class="col-md-3">
+                    <label for="apellidoPa" class="form-label" >Apellido Paterno:</label>
+                    <input type="text" class="form-control" id="apellidoPa" value="{{usuario.apellidoPa}}" readonly><br>
+                </div>
+                <div class="col-md-3">
+                    <label for="apellidoMa" class="form-label" >Apellido Materno:</label>
+                    <input type="text" class="form-control" id="apellidoMa" value="{{usuario.apellidoMa}}" readonly><br>
+                </div>
+                <div class="col-md-3">
+                    <label for="edad" class="form-label" >Edad:</label>
+                    <input type="number" class="form-control" id="edad" value="{{usuario.edad}}" readonly><br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <label for="telefono" class="form-label" >Telefono:</label>
+                    <input type="tel" class="form-control" id="telefono" value="{{usuario.telefono}}" readonly><br>
+                </div>
+                <div class="col-md-2">
+                    <label for="sexo" class="form-label" >Sexo</label>
+                    <input type="text" class="form-control" id="sexo" value="{{usuario.sexo}}" readonly><br>
+                </div>
+                <div class="col-md-3">
+                    <label for="correo" class="form-label">Correo:</label>
+                    <input type="text"class="form-control" id="correo" value="{{usuario.correo}}" readonly><br>
+                </div>
+                <div class="col-md-3">
+                    <label for="carrera" class="form-label">Correo:</label>
+                    <input type="text"class="form-control" id="carrera" value="{{usuario.carrera}}" readonly><br>
+                </div>
+                <div class="col-md-2">
+                    <label for="semestre" class="form-label">Correo:</label>
+                    <input type="text"class="form-control" id="semestre" value="{{usuario.semestre}}" readonly><br>
+                </div>
+            </div>
+            <div class="col">
+                <button type="submit"  class="btn btn-primary text-right">Borrar Usuario</button>
+                <a href="/" class="btn btn-primary text-right">Volver</a>
+            </div>
+        </form> 
+    </div>
+</div>
+
+
+@endsection

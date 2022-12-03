@@ -1,0 +1,54 @@
+@layout('layouts.app')
+
+@section('content')
+        <div class="row  ">
+            <div class="col offset-10">
+                <a href="/ingresar" class="btn btn-primary text-right"> Ingresar Usuario</a>          
+            </div>
+        </div> 
+        
+            <table class="table table-success p-2 text-dark bg-opacity-10">
+                    <tr>
+                        
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellido Paterno</th>
+                        <th scope="col">Apellido Materno</th>
+                        <th scope="col">Correo</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                    <tbody>
+                    @each(usuario in usuarios)
+                    <tr>
+                        
+                            <td>{{usuario.nombre}}</td>
+                            <td>{{usuario.apellidoPa}}</td>
+                            <td>{{usuario.apellidoMa}}</td>
+                            <td>{{usuario.correo}}</td>
+                            <td>
+                                <div class="row">
+                                    <div  class="btn-group" role="group" aria-label="Basic mixed styles example">
+                                        <div class="col-lg-4">
+                                            <a href="/usuario/{{usuario.id}}" class="btn btn-secondary">Detalle</a>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <a href="/editar/{{usuario.id}}" class="btn btn-success ">Editar</a>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <a href="/borrar/{{usuario.id}}" class="btn btn-danger  ">Borrar</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                    </tr>
+                    @endeach
+                    </tbody>
+            </table>
+        
+
+
+@endsection
+
+
+
+
